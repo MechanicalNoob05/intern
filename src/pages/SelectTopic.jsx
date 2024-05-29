@@ -57,12 +57,12 @@ export default function SelectTopics() {
 		}
 	};
 	return (
-		<div className="h-screen p-6 rounded flex flex-col justify-between">
+		<div className="h-screen p-6 rounded flex flex-col justify-between overflow-y-auto">
 			<div>
 				<h1 className="text-center p-6 font-bold text-2xl">Select Topics</h1>
-				<h3 className="text-gray-400 text-center">This is first time page, you can always change your options in settings</h3>
+				<h3 className="text-gray-400 text-center mb-4">This is first time page, you can always change your options in settings</h3>
 			</div>
-			<div className="grid grid-cols-4 gap-2">
+			<div className="grid lg:grid-cols-4 gap-2">
 				{topics?.map((item) => (
 					<div key={item} className="bg-white w-full h-max rounded p-2 border shadow">
 						<h2 className="border-b text-xl font-bold py-1">{item}</h2>
@@ -74,7 +74,7 @@ export default function SelectTopics() {
 					</div>
 				))}
 			</div>
-			<div>
+			<div className="my-2">
 				<span className="font-bold">Selected Topics:</span>
 				{
 					selectTopic?.map((item) => {
