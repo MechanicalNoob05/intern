@@ -50,7 +50,19 @@ export default function Home() {
 					</div>
 				</div>
 				<div className="bg-white w-3/12 rounded border p-2 shadow">
-					<h2 className="border-b text-xl font-bold py-1">Scoreboard</h2>
+					<h2 className="border-b text-xl font-bold py-1">Leaderboard</h2>
+					{
+						userData?.topHighScores.map((item) => {
+							return (
+								<div key={item._id} className="mb-2 w-full">
+									<div className={`my-2 ${userData?.name === item.name ? 'bg-green-200' : 'bg-white'} rounded p-2 shadow border`}>
+										<p className={`border-b ${userData?.name === item.name ? 'border-black' : ''} py-2 font-bold`}>{item.name}</p>
+										<p className="py-2">Top Score: {item.highScore}</p>
+									</div>
+								</div>
+							)
+						})
+					}
 				</div>
 			</div>
 		</div>
