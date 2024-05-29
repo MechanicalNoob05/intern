@@ -65,7 +65,7 @@ export default function StartQuiz() {
 	console.log(selectedOptions)
 	return (
 		<div className="bg-[url('https://images.pexels.com/photos/5428830/pexels-photo-5428830.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] h-screen flex justify-center items-center bg-cover bg-no-repeat">
-			<div className='w-[60%] flex flex-col items-center bg-white/90 p-5 rounded shadow'>
+			<div className='lg:w-[60%] flex flex-col items-center bg-white/90 p-5 rounded shadow'>
 				<div className='w-full'>
 					{questions?.map((item) => (
 						<div key={item._id} className="bg-white my-2 w-full h-max rounded p-2 border shadow">

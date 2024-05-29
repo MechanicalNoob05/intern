@@ -40,7 +40,7 @@ export default function Result() {
 	}, [])
 	return (
 		<div className="h-screen bg-[url('https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] bg-no-repeat bg-cover flex justify-center items-center">
-			<div className="flex flex-col justify-center items-center w-1/2 bg-white/90 p-4 rounded shadow border">
+			<div className="flex flex-col justify-center items-center lg:w-1/2 bg-white/90 p-4 rounded shadow border">
 				<h1 className="text-2xl font-bold border-b w-full text-center">Result</h1>
 				{
 					result?.lastResults.map((item) => {

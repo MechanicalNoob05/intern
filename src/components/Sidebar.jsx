@@ -10,7 +10,7 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen }) {
 		navigate('/login')
 	}
 	return (
-		<div className={`${sidebarOpen ? "translate-x-0" : "-translate-x-full"} absolute top-0 w-1/6 bg-white shadow h-screen p-4 text-xl`}>
+		<div className={`${sidebarOpen ? "translate-x-0" : "-translate-x-full"} absolute w-full top-0 lg:w-1/6 bg-white shadow h-screen p-4 text-xl`}>
 			<div className="flex flex-col justify-between h-full">
 				<div className="flex items-center justify-between pb-2 border-b border-black">
 					<h1 className="font-bold">Quiz App</h1>

@@ -20,7 +20,7 @@ export default function QuizTopicSelection() {
 	return (
 		<div className="max-h-screen">
 			<h1 className="text-center p-6 font-bold text-2xl subject">Select A Quiz Topic</h1>
-			<div className="grid grid-cols-3 gap-4 px-4 pb-4 overflow-y-auto">
+			<div className="grid lg:grid-cols-3 gap-4 px-4 pb-4 overflow-y-auto">
 				{
 					category?.map((item) => {
 						return (

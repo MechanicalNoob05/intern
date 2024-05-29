@@ -25,17 +25,17 @@ export default function Home() {
 		fetchData()
 	}, [])
 	return (
-		<div className="h-screen bg-[url('https://images.pexels.com/photos/1193743/pexels-photo-1193743.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] bg-cover bg-no-repeat">
+		<div className="lg:h-screen min-h-screen bg-[url('https://images.pexels.com/photos/1193743/pexels-photo-1193743.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] bg-cover bg-no-repeat">
 			<nav className="bg-white flex h-[6%] items-center shadow border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
 				<button onClick={() => setSidebarOpen(!sidebarOpen)}>
 					<GiHamburgerMenu className="text-xl" />
 				</button>
 			</nav>
 			<Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} name="Tejas Mayekar" />
-			<div className="p-4 h-[94%] flex gap-2">
-				<div className="w-9/12 h-max">
+			<div className="p-4 lg:h-[94%] flex lg:flex-row flex-col gap-2">
+				<div className="lg:w-9/12 h-max">
 					<h2 className="text-lg break-words text-gray-400 py-2">{`Welcome, ${userData?.name}`}</h2>
-					<div className="grid grid-cols-3 gap-4">
+					<div className="grid lg:grid-cols-3 gap-4">
 						{
 							userData?.score.length === 0 ? <div className="bg-white w-full h-max">No Scores Yet, Take a quiz to generate score card</div> : <>{
 								userData?.score.map((item) => {
@@ -49,7 +49,7 @@ export default function Home() {
 						}
 					</div>
 				</div>
-				<div className="bg-white w-3/12 rounded border p-2 shadow">
+				<div className="bg-white lg:w-3/12 rounded border p-2 shadow">
 					<h2 className="border-b text-xl font-bold py-1">Leaderboard</h2>
 					{
 						userData?.topHighScores.map((item) => {
