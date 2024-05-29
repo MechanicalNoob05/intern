@@ -25,7 +25,7 @@ export default function Home() {
 		fetchData()
 	}, [])
 	return (
-		<div className="h-screen">
+		<div className="h-screen bg-[url('https://images.pexels.com/photos/1193743/pexels-photo-1193743.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] bg-cover bg-no-repeat">
 			<nav className="bg-white flex h-[6%] items-center shadow border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
 				<button onClick={() => setSidebarOpen(!sidebarOpen)}>
 					<GiHamburgerMenu className="text-xl" />
