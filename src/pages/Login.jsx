@@ -24,7 +24,6 @@ export default function Login() {
 					'Content-Type': 'application/json',
 				},
 			});
-
 			if (response.ok) {
 				const data = await response.json()
 				localStorage.setItem('token', data.token)
@@ -37,6 +36,7 @@ export default function Login() {
 				toast.success('Login successful')
 				navigate('/')
 			} else {
+				toast.error('Invalid credentials')
 				console.error('Failed to add the comment');
 			}
 		} catch (error) {

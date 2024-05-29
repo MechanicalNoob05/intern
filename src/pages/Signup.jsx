@@ -27,7 +27,7 @@ export default function Signup() {
           'Content-Type': 'application/json',
         },
       });
-
+      const data = await response.json();
       if (response.ok) {
         setFormData(
           {
@@ -39,6 +39,7 @@ export default function Signup() {
         toast.success('Signup successful')
         navigate('/login')
       } else {
+        toast.error(data.error)
         console.error('Failed to add the comment');
       }
     } catch (error) {
