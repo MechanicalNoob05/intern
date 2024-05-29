@@ -7,7 +7,7 @@ export default function Home() {
 	const [sidebarOpen, setSidebarOpen] = useState(false)
 	const [userData, setUserData] = useState()
 	const fetchData = async () => {
-		const response = await fetch('http://localhost:5000/user/profile', {
+		const response = await fetch(`${process.env.REACT_APP_BASE_URL}user/profile`, {
 			method: 'GET',
 			headers: {
 				'Authorization': `Bearer ${localStorage.getItem('token')}`,
@@ -40,8 +40,9 @@ export default function Home() {
 							userData?.score.length === 0 ? <div className="bg-white w-full h-max">No Scores Yet, Take a quiz to generate score card</div> : <>{
 								userData?.score.map((item) => {
 									return (
-										<div className="bg-white w-full h-max rounded p-2 border shadow">
+										<div key={item._id} className="bg-white w-full h-max rounded p-2 border shadow">
 											<h2 className="border-b text-xl font-bold py-1">{item.category}</h2>
+											<p className="py-2"><span className="text-green-400 font-bold text-2xl">{item.score}</span>/<span>{item.total}</span></p>
 										</div>
 									)
 								})}</>

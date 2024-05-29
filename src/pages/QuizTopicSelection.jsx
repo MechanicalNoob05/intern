@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 export default function QuizTopicSelection() {
 	const [category, setCategory] = useState()
 	const fetchData = async() => {
-		const response = await fetch('http://localhost:5000/question/usercategory', {
+		const response = await fetch(`${process.env.REACT_APP_BASE_URL}question/usercategory`, {
 			method: 'GET',
 			headers: {
 				'Authorization': `Bearer ${localStorage.getItem('token')}`,

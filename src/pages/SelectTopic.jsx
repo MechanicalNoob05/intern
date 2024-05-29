@@ -8,7 +8,7 @@ export default function SelectTopics() {
 	const [selectTopic, setSelectTopic] = useState([]);
 
 	const fetchData = async () => {
-		const response = await fetch('http://localhost:5000/question', {
+		const response = await fetch(`${process.env.REACT_APP_BASE_URL}question`, {
 			method: 'GET',
 			headers: {
 				'Authorization': `Bearer ${localStorage.getItem('token')}`,
@@ -37,7 +37,7 @@ export default function SelectTopics() {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		try {
-			const response = await fetch(`http://localhost:5000/user/update`, {
+			const response = await fetch(`${process.env.REACT_APP_BASE_URL}user/update`, {
 				method: 'POST',
 				body: JSON.stringify({ selectedCategories: selectTopic }),
 				headers: {

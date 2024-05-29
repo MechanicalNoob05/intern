@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 export default function Login() {
 	const navigate = useNavigate()
@@ -16,7 +17,7 @@ export default function Login() {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		try {
-			const response = await fetch(`http://localhost:5000/user/login`, {
+			const response = await fetch(`${process.env.REACT_APP_BASE_URL}user/login`, {
 				method: 'POST',
 				body: JSON.stringify(formData),
 				headers: {
@@ -33,6 +34,7 @@ export default function Login() {
 						password: '',
 					}
 				)
+				toast.success('Login successful')
 				navigate('/')
 			} else {
 				console.error('Failed to add the comment');

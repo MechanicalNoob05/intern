@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
+import { toast } from 'react-toastify'
 export default function StartQuiz() {
 
 	const navigate = useNavigate()
@@ -37,7 +38,7 @@ export default function StartQuiz() {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		try {
-			const response = await fetch(`http://localhost:5000/question/check-answers/${id}`, {
+			const response = await fetch(`${process.env.REACT_APP_BASE_URL}question/check-answers/${id}`, {
 				method: 'POST',
 				body: JSON.stringify(selectedOptions),
 				headers: {
@@ -49,13 +50,15 @@ export default function StartQuiz() {
 			if (response.ok) {
 				const data = await response.json()
 				if(data.sucess){
+					toast.success('Submitted successfully')
 					navigate('/result')
 				}
-				console.log(data)
 			} else {
+				toast.error('Something went wrong')
 				console.error('Failed to add the comment');
 			}
 		} catch (error) {
+				toast.error('Something went wrong')
 			console.error('An error occurred', error);
 		}
 	}
