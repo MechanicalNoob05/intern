@@ -21,7 +21,7 @@ export default function StartQuiz() {
 		});
 	};
 	const fetchData = async () => {
-		const response = await fetch(`http://localhost:5000/question/${id}`, {
+		const response = await fetch(`${process.env.REACT_APP_BASE_URL}question/${id}`, {
 			method: 'GET',
 			headers: {
 				'Authorization': `Bearer ${localStorage.getItem('token')}`,
